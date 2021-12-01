@@ -6,13 +6,15 @@
 //
 
 import UIKit
+import Alamofire
 
 class MainViewController: UIViewController {
     
     @IBOutlet var descriptionLabel: UILabel!
     
     private let json = "https://www.thecocktaildb.com/api/json/v1/1/random.php"
-    private var drink: Cocktail?
+    private var drinks: Cocktail?
+    var drink: Drink?
     
     
     override func viewDidLoad() {
@@ -24,36 +26,33 @@ class MainViewController: UIViewController {
     """
     }
     
+    private func fetchData(from url: String?){
+        NetworkManager.shared.fetchData(from: url) { drink in
+            self.drinks = drink
+        }
+    }
+    
+    private func getRecipe(){
+        guard let test = drinks else { return }
+        var recipe: Drink?
+        
+        for cocktail in test.drinks {
+            recipe = cocktail
+        }
+        drink = recipe
+    }
     
     @IBAction func getCocktailButtonPressed(_ sender: Any) {
-        getDrink()
+        fetchData(from: json)
+        getRecipe()
+        
+   
+        
         
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let recipeVC = segue.destination as? RecipeViewController else { return }
-        recipeVC.drinks = drink
+        recipeVC.drink = drink
     }
 }
 
-extension MainViewController {
-    
-    private func getDrink() {
-        
-        guard let url = URL(string: json ) else {return}
-        URLSession.shared.dataTask(with: url) {data , _, error in
-            guard let data = data else {
-                print(error?.localizedDescription ?? "Unexpectable error")
-                return
-            }
-            
-            do {
-                let cocktail = try JSONDecoder().decode( Cocktail.self, from: data)
-                
-                print("Succes!!! \(cocktail)")
-                
-            } catch let error {
-                print(error.localizedDescription)
-            }
-        }.resume()
-    }
-}

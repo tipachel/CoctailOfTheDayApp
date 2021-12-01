@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		52AB4CCC0125035FCA5C87C9 /* Pods_CoctailOfTheDayApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6920135EBB918F2F03F57F18 /* Pods_CoctailOfTheDayApp.framework */; };
 		59B72266275113F00023FBDC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59B72265275113F00023FBDC /* AppDelegate.swift */; };
 		59B72268275113F00023FBDC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59B72267275113F00023FBDC /* SceneDelegate.swift */; };
 		59B7226A275113F00023FBDC /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59B72269275113F00023FBDC /* MainViewController.swift */; };
@@ -19,6 +20,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0A008779CF8912106887D81F /* Pods-CoctailOfTheDayApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CoctailOfTheDayApp.debug.xcconfig"; path = "Target Support Files/Pods-CoctailOfTheDayApp/Pods-CoctailOfTheDayApp.debug.xcconfig"; sourceTree = "<group>"; };
+		4462669C9ACBE44AAD547F0F /* Pods-CoctailOfTheDayApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CoctailOfTheDayApp.release.xcconfig"; path = "Target Support Files/Pods-CoctailOfTheDayApp/Pods-CoctailOfTheDayApp.release.xcconfig"; sourceTree = "<group>"; };
 		59B72262275113F00023FBDC /* CoctailOfTheDayApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoctailOfTheDayApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		59B72265275113F00023FBDC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		59B72267275113F00023FBDC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -30,6 +33,7 @@
 		59B72279275126330023FBDC /* NetworkingManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingManager.swift; sourceTree = "<group>"; };
 		59B7227B27513A0C0023FBDC /* RecipeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeViewController.swift; sourceTree = "<group>"; };
 		59B7227D275140D20023FBDC /* Cocktail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cocktail.swift; sourceTree = "<group>"; };
+		6920135EBB918F2F03F57F18 /* Pods_CoctailOfTheDayApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CoctailOfTheDayApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,6 +41,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				52AB4CCC0125035FCA5C87C9 /* Pods_CoctailOfTheDayApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -48,6 +53,8 @@
 			children = (
 				59B72264275113F00023FBDC /* CoctailOfTheDayApp */,
 				59B72263275113F00023FBDC /* Products */,
+				BA4A81AFA4D62B7A714D1D3A /* Pods */,
+				9B97EF0F3566581217EEB09B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -76,6 +83,24 @@
 			path = CoctailOfTheDayApp;
 			sourceTree = "<group>";
 		};
+		9B97EF0F3566581217EEB09B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6920135EBB918F2F03F57F18 /* Pods_CoctailOfTheDayApp.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		BA4A81AFA4D62B7A714D1D3A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				0A008779CF8912106887D81F /* Pods-CoctailOfTheDayApp.debug.xcconfig */,
+				4462669C9ACBE44AAD547F0F /* Pods-CoctailOfTheDayApp.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -83,9 +108,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 59B72276275113F50023FBDC /* Build configuration list for PBXNativeTarget "CoctailOfTheDayApp" */;
 			buildPhases = (
+				1B0D859C4D6C616CC086C7B2 /* [CP] Check Pods Manifest.lock */,
 				59B7225E275113F00023FBDC /* Sources */,
 				59B7225F275113F00023FBDC /* Frameworks */,
 				59B72260275113F00023FBDC /* Resources */,
+				BCC016241FA091927348F04B /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -141,6 +168,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1B0D859C4D6C616CC086C7B2 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-CoctailOfTheDayApp-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BCC016241FA091927348F04B /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CoctailOfTheDayApp/Pods-CoctailOfTheDayApp-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CoctailOfTheDayApp/Pods-CoctailOfTheDayApp-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CoctailOfTheDayApp/Pods-CoctailOfTheDayApp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		59B7225E275113F00023FBDC /* Sources */ = {
@@ -296,6 +365,7 @@
 		};
 		59B72277275113F50023FBDC /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0A008779CF8912106887D81F /* Pods-CoctailOfTheDayApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -325,6 +395,7 @@
 		};
 		59B72278275113F50023FBDC /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4462669C9ACBE44AAD547F0F /* Pods-CoctailOfTheDayApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

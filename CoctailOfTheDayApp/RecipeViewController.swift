@@ -9,41 +9,36 @@ import UIKit
 
 class RecipeViewController: UIViewController {
     
-    var drinks: Cocktail!
-    
-    private var drink: Drink!
     
     @IBOutlet var activityIndicator: UIActivityIndicatorView!
     @IBOutlet var cocktailImageView: UIImageView!
     @IBOutlet var cocktailNameLabel: UILabel!
     @IBOutlet var recipeLabel: UILabel!
     
+    var drink: Drink?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         activityIndicator.startAnimating()
         activityIndicator.hidesWhenStopped = true
-        getRecipe()
+        
         configuration()
-        
     }
-
-}
-extension RecipeViewController {
     
-    private func getRecipe() {
-        
-        var recipe: Drink?
-        for cocktail in drinks.drinks {
-            recipe = cocktail
-        }
-        drink = recipe
-        
-    }
-}
-extension RecipeViewController {
-    private func configuration() {
+    func configuration() {
+
         guard let cocktail = drink else {return}
+
         cocktailNameLabel.text = cocktail.strDrink
+        recipeLabel.text = """
+Instuctions: \(cocktail.strInstructions)
+"""
+        
+        activityIndicator.stopAnimating()
+        
     }
 }
+//extension RecipeViewController {
+//
+//    }
+//}
