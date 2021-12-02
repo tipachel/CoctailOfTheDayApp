@@ -11,48 +11,42 @@ import Alamofire
 class MainViewController: UIViewController {
     
     @IBOutlet var descriptionLabel: UILabel!
+    @IBOutlet var getCocktailButton: UIButton!
     
     private let json = "https://www.thecocktaildb.com/api/json/v1/1/random.php"
-    private var drinks: Cocktail?
     var drink: Drink?
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        getCocktailButton.isHidden = true
         descriptionLabel.text = """
     This App helps you choose a cocktail
     and shows how to make it.
     Tap the button to get some:)
     """
+
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        fetchData(from: json)
+        
     }
     
     private func fetchData(from url: String?){
         NetworkManager.shared.fetchData(from: url) { drink in
-            self.drinks = drink
+            self.drink = drink.drinks[0]
+            self.getCocktailButton.isHidden = false
         }
-    }
-    
-    private func getRecipe(){
-        guard let test = drinks else { return }
-        var recipe: Drink?
-        
-        for cocktail in test.drinks {
-            recipe = cocktail
-        }
-        drink = recipe
-    }
-    
-    @IBAction func getCocktailButtonPressed(_ sender: Any) {
-        fetchData(from: json)
-        getRecipe()
-        
-   
-        
-        
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let recipeVC = segue.destination as? RecipeViewController else { return }
         recipeVC.drink = drink
     }
+    @IBAction override func unwind(for unwindSegue: UIStoryboardSegue, towards subsequentVC: UIViewController) {
+        fetchData(from: json)
+    }
+
 }
+
+
 

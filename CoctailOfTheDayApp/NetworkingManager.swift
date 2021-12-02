@@ -28,6 +28,7 @@ class NetworkManager {
                 let cocktails = try JSONDecoder().decode(Cocktail.self, from: data)
                 DispatchQueue.main.async {
                     completition(cocktails)
+                    
                 }
                 
             } catch let error {
